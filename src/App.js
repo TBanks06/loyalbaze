@@ -1,8 +1,9 @@
 
 // import '../src/styles/App.css'
 import HeroSection from './components/HeroSection';
-import Header from './components/Header';
-import Form from './components/Form';
+// import Header from './components/Header';
+// import Form from './components/Form';
+import Main from './components/Main';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       {/* <Header />
       
       <HeroSection /> */}
-      <Form />
+      <Main />
     </div>
   );
 }
