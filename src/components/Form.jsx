@@ -22,14 +22,25 @@ const Form = () => {
   }
 
   const validateCompData  = (e) => {
-    var cname = e.target.value
+    var fullname = e.target.value
   
-    if (validator.isEmail(cname)) {
+    if (validator.isEmail(fullname)) {
       setEmailError('Valid Email :)')
     } else {
       setEmailError('Enter valid Email!')
     }
   }
+
+  const validateFName  = (e) => {
+    var fullname = e.target.value
+  
+    if (validator.isEmpty(fullname)) {
+      setEmailError('Full name cannot be empty:)')
+    } else {
+      setEmailError('Enter valid name!')
+    }
+  }
+
   return (
     <form className='rounded-3xl  w-4/12 h-6/12 bg-slate-700 p-12' >
         <div className="mx-auto">
@@ -38,15 +49,17 @@ const Form = () => {
             </div>
 
             <br />
+            <span className="text-red-500">{fulnError}</span>
             <input 
                 className="w-64 mb-4 bg-transparent placeholder:font-italic border border-slate-300 rounded py-2 pl-3 pr-5 focus:outline-none "
                 type="text" 
                 name="fullname" 
                 placeholder='Enter your full name'
                 required
-             /><span>{fulnError}</span>
+                onChange={(e) => validateFName(e)}
+             />
                 <br />
-
+                <span className="text-red-500">{emailError}</span>
             <input 
                 className="w-64 mb-4 bg-transparent placeholder:font-italic border border-slate-300 rounded py-2 pl-3 pr-5 focus:outline-none"
                 type="text" 
@@ -54,8 +67,9 @@ const Form = () => {
                 placeholder='Enter your work email' 
                 required
                 onChange={(e) => validateFormData(e)}
-            /> <span>{emailError}</span>
+            /> 
             <br />
+            
             <input 
                 className="w-64 mb-4 bg-transparent placeholder:font-italic border border-slate-300 rounded py-2 pl-3 pr-5 focus:outline-none"
                 type="text" 
