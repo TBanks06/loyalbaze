@@ -2,7 +2,10 @@
 module.exports = {
   content: ["./src/**/*.{html,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      
+  'satoshi':['Satoshi', 'sans serif']   
+},
   },
   plugins: [],
 }
